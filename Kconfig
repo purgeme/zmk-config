@@ -1,0 +1,4 @@
+config SOFLE_CUSTOM_DISPLAY
+    bool "Custom Sofle display"
+    depends on ZMK_DISPLAY
+    select LV_USE_IMG

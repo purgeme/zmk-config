@@ -44,7 +44,3 @@ endchoice
 endif # LVGL
 
 endif
-
-config SOFLE_CUSTOM_DISPLAY
-    bool "Custom Sofle display"
-    depends on ZMK_DISPLAY

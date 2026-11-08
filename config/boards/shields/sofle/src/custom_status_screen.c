@@ -113,8 +113,8 @@ static void convert_p_to_lvgl_i1(const uint8_t *qmk_buf, uint8_t *out) {
 }
 
 static uint8_t img_buf[8 + P_STRIDE * P_HEIGHT];
-static lv_image_dsc_t p_dsc = {
-    .header = { .cf = LV_COLOR_FORMAT_I1, .w = P_WIDTH, .h = P_HEIGHT },
+static lv_img_dsc_t p_dsc = {
+    .header = { .cf = LV_IMG_CF_INDEXED_1BIT, .w = P_WIDTH, .h = P_HEIGHT },
     .data_size = sizeof(img_buf),
     .data = img_buf,
 };
@@ -129,8 +129,8 @@ static void update_p(bool with_glitch) {
     if (with_glitch) apply_glitch(buf);
     convert_p_to_lvgl_i1(buf, img_buf);
     p_dsc.data = img_buf;
-    p_dsc.header.cf = LV_COLOR_FORMAT_I1;
-    lv_image_set_src(p_img, &p_dsc);
+    p_dsc.header.cf = LV_IMG_CF_INDEXED_1BIT;
+    lv_img_set_src(p_img, &p_dsc);
     lv_obj_invalidate(p_img);
 }
 
@@ -167,7 +167,7 @@ lv_obj_t *zmk_display_status_screen(void) {
     lv_obj_t *screen = lv_obj_create(NULL);
 
     /* P keycap — center */
-    p_img = lv_image_create(screen);
+    p_img = lv_img_create(screen);
     lv_obj_align(p_img, LV_ALIGN_CENTER, 0, 0);
     update_p(false);
     logo_dirty = false;
