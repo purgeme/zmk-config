@@ -91,11 +91,10 @@
         adjust_layer {
 // ----------------------------------------------------------------------------------------------------------------------------
 // | BTCLR  |  BT1    |  BT2    |   BT3   |   BT4   |   BT5   |                  |      |      |       |      |       |       |
-// | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      |       |      |       |       |
-// |        | RGB_BRD | RGB_BRI |         |         |         |                  |      |      |       |      |       |       |
-// Right half (mouse): row2 MOVE_UP/SCRL_UP, row3 MOVE_L/D/R + SCRL_DOWN, row4 L/M/R click
-// |        |         |         |         |         |         | RGB_TOG | |      |      |      |       |      |       |       |
-//                    |         |         |         |         |         | |      |      |      |       |      |
+// | EXTPWR | RGB_HUD | RGB_HUI | RGB_SAD | RGB_SAI | RGB_EFF |                  |      |      | MS_UP|       |SCRL_UP|      |       |
+// |        | RGB_BRD | RGB_BRI |         |         |         |                  |MS_LFT|MS_DN |MS_RGT |SCRL_DN|      |       |
+// |        |         |         |         |         |         | RGB_TOG |   |      |      |LCLICK|MCLICK|RCLICK|      |       |
+//                    |         |         |         |         |         |   |      |      |      |       |      |
             display-name = "adjust";
             bindings = <
 &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4                            &none &none &none &none &none &none
